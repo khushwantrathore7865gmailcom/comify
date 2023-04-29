@@ -1,0 +1,5 @@
+let div =  document.getElementById("content");
+let elm = document.createElement("p");
+let divElement = document.createTextNode("This is coming from Javascript");
+elm.appendChild(divElement);
+div.appendChild(elm);

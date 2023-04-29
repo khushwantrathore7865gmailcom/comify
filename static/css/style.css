@@ -1,0 +1,847 @@
+/* font family  */
+
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-Black.woff') format('woff2'),
+        url('../fonts/fontfamily/Lato-Black.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-BlackItalic.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-BlackItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-BoldItalic.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-LightItalic.woff') format('woff2'),
+        url('../fonts/fontfamily/Lato-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-Italic.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-Light.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-Thin.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-ThinItalic.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/fontfamily/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/fontfamily/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* font family  */
+
+
+
+/*common css  */
+
+*,*::before,*::after{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	font-size:1rem;
+	font-family: 'Lato';
+}
+h1,h2,h3,h4,h5,h5,h6,ul,p,ul{
+	margin:0;
+    color:#fff;
+}
+
+ul{
+	list-style:none;
+}
+
+a,a:hover{
+	text-decoration:none;
+}
+
+img{
+	max-width:100%;
+	width:100%;
+}
+
+:root {
+  --main-color: hotpink;
+  --pane-padding: 5px 42px;
+}
+
+.pt-20{
+	padding-top:20px;
+}
+
+.pb-20{
+	padding-bottom:20px;
+}
+
+.button_decoration{
+	padding:0.5em 2.5em;
+	border: 1px solid #c1c1c1;
+}
+
+.model{
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	padding:1em;
+	margin:1em 0;
+}
+input,button,textarea{
+	font-family: inherit;
+}
+
+
+/* components  */
+
+/*
+
+1) Header 
+
+2) Sections
+
+3) Footer
+
+*/
+
+/* components  */
+
+
+/* Header css  */
+
+
+header {
+    background-color: #FFF500;
+    position: relative;
+    min-height: 75px;
+}
+
+li.nav-item {
+    border-top: 2px solid transparent;
+    padding: 0 20px;
+}
+.navbar-list-outer
+{
+    padding:25px 0;
+}
+li.nav-item:hover
+{
+    border-top: 2px solid #fff;
+    transition: 0.3s linear all;
+}
+.navbar-list-outer ul li a.nav-link
+{
+    color: #000!important;
+	font-size:20px;
+}
+.header-right-text {
+    display: flex;
+    align-items: center;
+}
+.header-right-text a
+{
+	color:#000;
+	font-size:20px;
+}
+.header-right-text a.login-btn
+{
+	font-size:20px;
+	margin-left:15px;
+	color:#fff;
+	background-color:#000;
+	border-radius:15px;
+	padding:22px 58px;
+}
+.user-outer
+{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.user-div
+{
+margin-left:15px;
+}
+.user-outer:hover .user-details-div
+{
+	display:block;
+}
+.user-details-div {
+    color: #000;
+    display: flex;
+	display:none;
+    position: absolute;
+    bottom: -55px;
+    width: 150px;
+    left: 50%;
+    transform: translate(-30%, -30%);
+}
+.user-details-div a {
+    font-size: 15px;
+    background: #fff;
+    padding: 4px;
+    border: 0.5px solid #000;
+}
+/* End of Header css  */
+
+
+
+/*  banner section*/
+
+.banner-section {
+    width: 100%;
+    min-height: 422px;
+    background: linear-gradient(90deg, rgb(0 0 0 / 55%) 0%, rgb(54 53 52 / 0%) 75%, rgb(92 87 87 / 0%) 100%), url(../images/people-cleaning-hazmat-suits.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.banner-section h1 {
+    /* margin-bottom: 35px; */
+    font-size: 40px;
+    font-weight: 700;
+}
+.banner-section h2 {
+    
+    font-size: 25px;
+    font-weight: 400;
+	padding:10px 0 25px;
+}
+.banner-text
+{
+   text-align:center;
+}
+input.banner-input {
+    width: 65%;
+    padding: 0.8rem 0.8rem 0.8rem 3rem;
+    border: navajowhite;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 4px 0px 9px rgb(0 0 0 / 15%);
+    background-color: #ffffff21;
+    color: #fff;
+}
+
+input.banner-input::placeholder
+{
+	color:#fff;
+}
+
+
+
+
+
+/*  about section*/
+
+
+.about-section {
+    background-color:#f5f5f5;
+    padding: 4rem 0 4rem;
+}
+.item-outer {
+    border-radius: 8px;
+    background-color: #FFF500;
+}
+.item-outer img {
+    border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.about-section h1
+{
+	color:#000;
+	font-weight:600;
+	margin-bottom:25px;
+}
+.content-outer
+{
+	padding:10px;
+}
+.content-outer h6
+{
+	font-size:20px;
+	font-weight:500;
+	color:#000;
+}
+.content-outer p
+{
+	font-size:15px;
+	color:#000;
+}
+
+/*  banner section*/
+
+
+
+
+
+
+/*seller-section*/
+
+.discount-section
+{
+    background-color: #303131;
+    padding: 3rem 0;
+}
+.view-btn
+{
+	border:none;
+	padding:18px 40px;
+	font-size:20px;
+	background-color:#FFF500;
+	color:#303131;
+	border-radius:8px;
+}
+.discount-section h2
+{
+	font-size:50px;
+	font-weight:600;
+	color:#fff500;
+	padding-bottom:15px;
+}
+.discount-section p
+{
+	font-size:30px;
+	font-weight:400;
+	color:#fff;
+	
+}
+/*seller-section*/
+
+
+
+
+
+
+
+/*easier-section */
+
+.quick-section
+{
+    background-color: #fff;
+    padding: 6rem 0;
+}
+.quick-section h1
+{
+    color: #000;
+	font-size:50px;
+	font-weight:600;
+    padding-bottom: 1.5rem;
+}
+.quick-outer {
+    border-radius: 8px;
+}
+.quick-outer img {
+    border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.quick-content-outer
+{
+	padding:18px;
+	display:flex;
+	justify-content:space-between;
+    background-color: #303131;
+}
+.quick-content-outer h6
+{
+	font-size:20px;
+	font-weight:500;
+	color:#fff;
+}
+.content-outer p
+{
+	font-size:15px;
+	color:#000;
+}
+
+/*easier-section*/
+
+
+
+
+
+
+
+
+/*testimonials-section*/
+
+.testimonials-section
+{
+    background-color: #284f7a;
+    padding: 6rem 0;
+}
+.video-box-outer
+{
+    box-shadow: 4px 0px 9px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+}
+.testimonials-section h2
+{
+    padding: 0 0 1.5rem;    
+}
+
+.testimonials-section p {
+    font-size: 1.2rem;
+    padding: 0 2rem 1.5rem 0;
+}
+.testimonials-section p span
+{
+    color: #53a5ff !important;
+}
+.testimonials-section p span i
+{
+
+font-size: 1rem;
+margin-left: 7px;
+}
+
+
+
+
+
+
+
+/*testimonial-section*/
+
+
+
+
+
+
+
+
+
+
+/* End of Footer css */
+
+
+
+
+
+
+
+/* ---------------   Login page-------------*/
+
+
+
+form.login-form {
+    border-radius: 10px;
+    background-color: #303131;
+    padding: 40px 80px;
+}
+.login-form a
+{
+	color:#fff;
+}
+section.login-section {
+    padding: 10rem 0;
+	min-height:100vh;
+	background-color:#fff500;
+}
+.login-btn-outer{
+	text-align:center;
+}
+.login-btn
+{
+	font-size: 20px;
+    margin-left: 15px;
+	border:none;
+    color: #000;
+    background-color: #fff500;
+    border-radius: 15px;
+    padding: 17px 65px;
+}
+
+label.form-label {
+    color: #fff;
+    padding-top: 15px;
+}
+input {
+    border-radius: 50px !important;
+    padding: 10px !important;
+    border: 1px solid #fff !important;
+    background: rgb(255 255 255 / 20%) !important;
+}
+.user-div 
+{
+	padding-top:10px;
+}
+.user-div span
+{
+	color:#fff;
+	padding-top:15px;
+	font-size:13px;
+	font-weight:200;
+}
+.user-div span a
+{
+	margin-left:10px;
+	font-weight:400;
+	font-size:15px;
+	color:#fff;
+}
+
+
+
+
+
+
+
+select, input, textarea {
+    padding: 15px !important;
+    border-radius: 12px !important;
+    border-color: #000 !important;
+}
+.add-service-section label {
+    color: #000;
+	font-weight:600;
+	padding-bottom:8px;
+    padding-top: 15px;
+}
+
+.add-service-section
+{
+	background-color:#303131;
+	padding:5rem 0;
+}
+.add-service-form
+{
+	background-color:#fff;
+	padding:25px;
+	border-radius:15px;
+}
+.add-service-form h4 i
+{
+	margin-right:15px;
+}
+.add-service-form h4
+{
+color:#000;	
+font-weight:600;
+}
+.submit-btn
+{
+	padding:17px 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*-------Service page------------*/
+
+
+.house-section
+{
+	padding:50px 0 0;
+	background-color:#fff;
+}
+.house-section h1
+{
+	color:#000;
+}
+.house-section p
+{
+font-size:20px;
+	color:#000;
+}
+.service-divider
+{
+	border-top:1px solid #303131;
+}
+.service-top-bottom-divider
+{
+	border-top:1px solid #303131;
+	border-bottom:1px solid #303131;
+}
+.related-section
+{
+	background-color:#fff;
+	padding:50px 0;
+}
+.related-section h1
+{
+	color:#000;
+	margin-bottom:20px;
+}
+
+
+.custom-file-button input[type=file] {
+  margin-left: -2px !important;
+}
+
+.custom-file-button input[type=file]::-webkit-file-upload-button {
+  display: none;
+}
+
+.custom-file-button input[type=file]::file-selector-button {
+  display: none;
+}
+
+.custom-file-button:hover label {
+  background-color: #dde0e3;
+  cursor: pointer;
+}
+.upload-label img {
+    width: 40%;
+}
+.upload-label {
+    background: transparent;
+    border: none;
+    flex-direction: column;
+}
+.adress-outer i
+{
+	font-size:18px;
+	padding-right:15px;
+}
+.adress-outer
+{
+	color:#000;
+}
+.service-social-btn
+{
+	border-radius:15px;
+}
+.service-social-btn i
+{
+	padding-right:5px;
+}
+.login-btn:hover {
+    background-color: #e5b206;
+}
+@media screen and (max-width:1200px)
+{
+    .seller-image-outer {
+        width: 265px;
+        top: -15%;
+        transform: translate(-50%, 15%);
+      }
+      button.banner-btn {
+        font-size: 15px;
+        
+    }
+    .review-outer-box {
+       
+        height: 330px;
+      }
+      .review-section {
+        bottom: -28%;
+      }
+    .about-right-outer h2 {
+      display: block;
+    }
+    .seller-image-box-outer {
+        height: 210px;
+      }
+      .seller-box-text {
+        padding: 0 2rem;
+      }
+      .easier-box-outer {
+        min-height: 190px;
+      }
+      .footer-right-box-outer {
+        width: 380px;
+      }
+      .footer-left-box-outer {
+        padding: 0 3rem;
+      }
+}
+@media screen and (max-width:992px)
+{
+    .logo-outer-a {
+        width: 35%;
+        left: 0;
+      }
+      .header-container-mob
+      {
+        height: 75px;
+      }
+}
+
+
+
+
+
+@media screen and (min-width:768px) {
+    .column-5 {
+        width: 20%;
+        flex: 0 0 auto;
+    }
+    
+}
+
+
+@media screen and (max-width:768px) {
+    .column-5 {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .logo-outer-a{
+        position:unset;
+    }
+    #navbarNavDropdown{
+        z-index: 999;
+        background-color: #000;
+    }
+    .navbar-list-outer{
+        height: unset;
+    }
+    .review-section{
+        position: unset;
+    }
+    .banner-section{
+        padding:50px 15px;
+    }
+    .banner-section form{
+        flex-direction: column;
+    }
+    input.banner-input{
+        width:100%
+    }
+    button.banner-btn {
+        width: 100%;
+        padding: 15px 0;
+        margin: 15px 0;
+    }
+    button.navbar-toggler{
+        box-shadow: none!important;
+    }
+    .review-section .row{
+        gap:15px 0;
+    }
+    
+    .about-right-outer {
+        padding: 3rem 1rem;
+      }
+    .about-section {
+        padding: 3rem 0;
+      }
+      .about-image-outer
+      {
+        position: unset;
+        transform: unset;
+      }
+      .about-main-outer {
+        width: 100%;
+      }
+      .seller-image-outer {
+        width: 90%;
+      }
+      .seller-outer {
+        min-height: 440px;
+        margin-bottom: 4rem;
+      }
+      .seller-image-box-outer {
+        height: 280px;
+      }
+      .seller-section {
+        padding: 2rem 0;
+      }
+      .easier-box-outer {
+        min-height: 190px;
+        margin-bottom: 4rem;
+      }
+      .easier-section {
+        padding: 2rem 0;
+      }
+      .testimonials-section {
+        padding: 2rem 0;
+      }
+      .footer-section {
+        padding: 2rem 0;
+      }
+      .footer-outer {
+        width: 100%;
+        margin: auto;
+      }
+      .footer-right-box-outer {
+        width: 100%;
+        position: unset;
+        transform: unset;
+        margin-bottom: 3rem;
+      }
+}
