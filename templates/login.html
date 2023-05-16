@@ -50,7 +50,7 @@
 
      <header>
 
-   <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
+     <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
       <div class="container  header-container-mob">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,10 +63,17 @@
         </li>
 		 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
+            Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/category/Food">Food</a></li>
+            <li><a class="dropdown-item" href="/category/Food"> Food </a>
+			  	 <ul class="submenu dropdown-menu">
+				    <li><a class="dropdown-item" href="/category/Day_Special">Day Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Week_Special">Week Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Month_Special">Month Special</a></li>
+
+				 </ul>
+			  </li>
             <li><a class="dropdown-item" href="/category/Service">Service</a></li>
             <li><a class="dropdown-item" href="/category/Accommadation">Accommodation </a></li>
           </ul>
@@ -75,9 +82,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/addNewService/">Add Your Service</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/addNewService/">Add Your Service</a>-->
+<!--        </li>-->
        </ul>
 
 	<ul class="header-right-text">
@@ -90,7 +97,7 @@
            <i class="fa-regular fa-user"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/MyServices/">My services</a></li>
+            <li><a class="dropdown-item" href="/MyProfile/">My Profile</a></li>
             <li><a class="dropdown-item" href="/logout/">Log Out</a></li>
 
           </ul>
@@ -103,7 +110,6 @@
 
   </div>
 </nav>
-
         </header>
 
 
@@ -135,13 +141,13 @@
 {% endif %}
 							<div class="mb-2">
 							<label for="exampleInputEmail1" class="form-label">Email  </label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" placeholder="Enter your email" aria-describedby="emailHelp">
 							</div>
 							<div class="mb-2">
 							 <label for="pass" class="form-label">Password</label>
-    <input type="password" class="form-control" placeholder="Enter your password" id="pass">
+    <input type="password" class="form-control" placeholder="Enter your password" id="pass" name="pass">
 	
-  <div style="text-align:right"><a href="#" style="font-size:15px" data-target="#pwdModal" data-toggle="modal">Forgot password</a></div>
+  <div style="text-align:right"><a href="/reset_password/" style="font-size:15px" data-target="#pwdModal" data-toggle="modal">Forgot password</a></div>
 
 
 <!--modal-->

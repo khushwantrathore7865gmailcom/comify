@@ -38,7 +38,7 @@
 
     <!-- **** ----- custum css  ----  **** -- -->
 
-    <title>Register</title>
+    <title>Add service</title>
 </head>
 
 <body>
@@ -111,9 +111,8 @@
 
   </div>
 </nav>
+
         </header>
-
-
 
 
         <!-- **** -----  header ----  **** -- -->
@@ -126,67 +125,61 @@
 
 
 
-        <section class="login-section">
+        <section class="add-service-section">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-9 m-auto">
-                        <div class="login-outer">
-                            <form class="login-form" method="post">
+                    <div class="col-md-12">
+                        <div class="service-outer">
+                            <form class="add-service-form" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
-							<h3>Register</h3>
+							<h4><i class="fa-regular fa-circle-plus"></i>Profile</h4>
+							<div class="row mt-5">
 
-							<div class="mb-2">
-							<label for="exampleInputEmail1" class="form-label">Email  </label>
-    <input type="email" class="form-control" name="exampleInputEmail1" id="exampleInputEmail1" placeholder="Enter your email" aria-describedby="emailHelp">
+<!--										<div class="col-md-3">-->
+<!--							 <label class="" for="specificSizeSelect">Business Category</label>-->
+<!--    <select class="form-select" id="cat" name="cat">-->
+<!--      <option selected>Select Category</option>-->
+<!--      <option value="Food">Food</option>-->
+<!--      <option value="Service">Service</option>-->
+<!--      <option value="Accomodation">Accomodation</option>-->
+<!--    </select>-->
+<!--							</div>-->
+
+							<div class="col-md-12 ">
+							 <label for="name" class="form-label">Name</label>
+  <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
 							</div>
-							<div class="mb-2">
-							 <label for="pass" class="form-label">Password</label>
-    <input type="password" class="form-control" name="pass" placeholder="Enter your password" id="pass">
-
-<!--  <div style="text-align:right"><a href="#" style="font-size:15px" data-target="#pwdModal" data-toggle="modal">Forgot password</a></div>-->
-
-
-<!--modal-->
-<div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center">What's My Password?</h1>
-      </div>
-      <div class="modal-body">
-          <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="text-center">
-
-                          <p>If you have forgotten your password you can reset it here.</p>
-                            <div class="panel-body">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email">
-                                    </div>
-                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
-                                </fieldset>
+                                <div class="col-md-3" >
+                             <label class="" for="specificSizeSelect">Gender</label>
+    <select class="form-select" id="specificSizeSelect" name="gender">
+      <option selected>Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-      </div>
-      <div class="modal-footer">
-          <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		  </div>
-      </div>
+                <div class="col-md-7 mb-2">
+							 <label for="name" class="form-label mb-0">Age</label>
+  <input type="number" class="form-control" id="age" name="age" placeholder="Enter Your Age">
+							</div>
+							<div class="col-md-12">
+							<label for="address" class="form-label mb-0">Address</label>
+  <textarea class="form-control" placeholder="Enter address " id="address" name="address" rows="5"></textarea>
+							</div>
+
+
+
+
+							<div class="col-md-4">
+							 <div class="input-group custom-file-button">
+    <label class="input-group-text form-control upload-label" for="pp">Choose A Image<br><img src="{% static 'images/upload.png' %}"></label>
+    <input type="file" class="form-control invisible" id="pp" name="pp">
   </div>
-  </div>
-</div>
 							</div>
 
 							<div class="mt-3 login-btn-outer">
-							<button type="submit" class="btn btn-primary login-btn">Register</button>
-							<div class="user-div"><span>Already User<a href="/login/" style="text-decoration:underline;">Login Now</a></span></div>
+							<button type="submit" class="btn btn-primary login-btn submit-btn">Submit</button>
+
 							</div>
 							</form>
                         </div>
@@ -214,13 +207,13 @@
 
 
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
-    <script type="text/javascript" src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 
-    <script type="text/javascript" src="js/owl.carousel.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script type="text/javascript">
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 40,
@@ -237,8 +230,37 @@
                 }
             }
         })
-    </script>
 
+
+    </script>
+	<script>
+$(document).ready(function(){
+    $('#sec').hide();
+            $('.new').css("width", "73%");
+$('#cat').click(function() {
+  var selected = $('#cat option:selected').val();
+    if(selected == 'Food')
+    {
+        $('#sec').show();
+          $('.new').css("width", "49%");
+    }
+    else
+    {
+        $('#sec').hide();
+        $('.new').css("width", "73%");
+    }
+
+
+});
+});
+</script>
+<script>
+$('#filecount').filestyle({
+ input : false,
+ buttonName : 'btn-danger',
+ iconName : 'glyphicon glyphicon-folder-close'
+});
+</script>
     <script type="text/javascript" src="js/custum.js"></script>
 
 </body>

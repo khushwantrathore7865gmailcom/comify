@@ -51,7 +51,7 @@
 
     <header>
 
-   <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
+      <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
       <div class="container  header-container-mob">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,10 +64,17 @@
         </li>
 		 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
+            Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/category/Food">Food</a></li>
+            <li><a class="dropdown-item" href="/category/Food"> Food </a>
+			  	 <ul class="submenu dropdown-menu">
+				    <li><a class="dropdown-item" href="/category/Day_Special">Day Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Week_Special">Week Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Month_Special">Month Special</a></li>
+
+				 </ul>
+			  </li>
             <li><a class="dropdown-item" href="/category/Service">Service</a></li>
             <li><a class="dropdown-item" href="/category/Accommadation">Accommodation </a></li>
           </ul>
@@ -76,9 +83,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/addNewService/">Add Your Service</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/addNewService/">Add Your Service</a>-->
+<!--        </li>-->
        </ul>
 
 	<ul class="header-right-text">
@@ -91,7 +98,7 @@
            <i class="fa-regular fa-user"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/MyServices/">My services</a></li>
+            <li><a class="dropdown-item" href="/MyProfile/">My Profile</a></li>
             <li><a class="dropdown-item" href="/logout/">Log Out</a></li>
 
           </ul>
@@ -128,15 +135,24 @@
 							<h4><i class="fa-regular fa-circle-plus"></i>Add service</h4>
 							<div class="row mt-5">
 							
-							<div class="col-md-5 mb-2">
+										<div class="col-md-3">
 							 <label class="" for="specificSizeSelect">Business Category</label>
-    <select class="form-select" id="specificSizeSelect" name="specificSizeSelect">
+    <select class="form-select" id="cat" name="cat">
       <option selected>Select Category</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="Food">Food</option>
+      <option value="Service">Service</option>
+      <option value="Accomodation">Accomodation</option>
     </select>
 							</div>
+                                            <div class="col-md-3" id="sec">
+                             <label class="" for="specificSizeSelect">Business Category</label>
+    <select class="form-select" id="specificSizeSelect" name="specificSizeSelect">
+      <option selected>Select Category</option>
+      <option value="Day_Special">Day Special</option>
+      <option value="Week_Special">Week Special</option>
+      <option value="Month_Special">Month Special</option>
+    </select>
+                            </div>
 							<div class="col-md-7 mb-2">
 							 <label for="name" class="form-label mb-0">Business Name</label>
   <input type="text" class="form-control" id="name" name="name" placeholder="Enter Business Name">
@@ -162,11 +178,11 @@
 							<label for="desc" class="form-label mb-0">Description</label>
   <textarea class="form-control" placeholder="Enter description" id="desc" name="desc" rows="5"></textarea>
 							</div>
-							
+                                <div class="col-md-2"></div>
 							<div class="col-md-4">
 							 <div class="input-group custom-file-button">
     <label class="input-group-text form-control upload-label" for="pp">Choose A Image<br><img src="{% static 'images/upload.png' %}"></label>
-    <input type="file" class="form-control invisible" id="pp" name="pp">
+    <input type="file" class="form-control invisible" id="pp" name="pp"accept="image/x-png,image/gif,image/jpeg" multiple>
   </div>
 							</div>
 
@@ -206,7 +222,7 @@
 
     <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script type="text/javascript">
+     <script type="text/javascript">
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 40,
@@ -226,15 +242,40 @@
 
 
     </script>
+	<script>
+$(document).ready(function(){
+    $('#sec').hide();
+            $('.new').css("width", "73%");
+$('#cat').click(function() {
+  var selected = $('#cat option:selected').val();
+    if(selected == 'Food')
+    {
+        $('#sec').show();
+          $('.new').css("width", "49%");
+    }
+    else
+    {
+        $('#sec').hide();
+        $('.new').css("width", "73%");
+    }
 
+
+});
+});
+</script>
 <script>
 $('#filecount').filestyle({
  input : false,
  buttonName : 'btn-danger',
  iconName : 'glyphicon glyphicon-folder-close'
 });
+$("#image").on("change", function() {
+    if ($("#pp")[0].files.length > 5) {
+        alert("You can select only 2 images");
+    }
+});
 </script>
-    <script type="text/javascript" src="{% static 'js/custum.js' %}"></script>
+    <script type="text/javascript" src="js/custum.js"></script>
 
 </body>
 

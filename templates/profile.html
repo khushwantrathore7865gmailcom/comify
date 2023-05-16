@@ -14,7 +14,7 @@
     <!--font awesome 6-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-    <!--<link rel="stylesheet" href="fonts/fontawesome/{% static 'css/all.css" />
+    <!--<link rel="stylesheet" href="fonts/fontawesome/css/all.css" />
     <script src="https://kit.fontawesome.com/f2a4dd39db.js" crossorigin="anonymous"></script>-->
     <!--font awesome 6-->
 
@@ -37,8 +37,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!-- **** ----- custum css  ----  **** -- -->
-
-    <title>Search</title>
+<style>body {
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #000;
+}
+</style>
+    <title>Taamu</title>
 </head>
 
 <body>
@@ -48,9 +57,8 @@
 
         <!-- **** -----  header ----  **** -- -->
 
-
     <header>
-
+    
      <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
       <div class="container  header-container-mob">
 
@@ -90,7 +98,7 @@
 
 	<ul class="header-right-text">
 <!--	<li><a style="text-decoration:underline;" href="#">Register as professional</a></li>-->
-        {% if u %}
+        {% if ue %}
 	<li><a class="login-btn" href="/login">Login</a></li>
         {% else %}
 	<li class="nav-item dropdown">
@@ -111,12 +119,11 @@
 
   </div>
 </nav>
-
         </header>
 
 
-        <!-- **** -----  header ----  **** -- -->
 
+        <!-- **** -----  header ----  **** -- -->
 
 
 
@@ -125,50 +132,80 @@
 
 
 
+        <section class="house-section">
+            <div class="container">
+ 
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img"  src="{{pr.profile_pic.url}}" alt="student dp">
+            <h3>Ishmam Ahasan Samin</h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-0"><strong class="pr-1">Name:</strong>{{pr.name}}</p>
+<!--            <p class="mb-0"><strong class="pr-1">ABC:</strong>4</p>-->
+<!--            <p class="mb-0"><strong class="pr-1">ABC:</strong>A</p>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3  style="color:black;" class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Email</th>
+                <td width="2%">:</td>
+                <td>{{u.username}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Age</th>
+                <td width="2%">:</td>
+                <td>{{pr.age}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Gender</th>
+                <td width="2%">:</td>
+                <td>{{pr.gender}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Address</th>
+                <td width="2%">:</td>
+                <td>{{pr.address}}</td>
+              </tr>
 
-        <!--   *************end banner-section   ***************  -->
+            </table>
+          </div>
+        </div>
+          <div style="height: 26px"></div>
+<!--        <div class="card shadow-sm">-->
+<!--          <div class="card-header bg-transparent border-0">-->
+<!--            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Information</h3>-->
+<!--          </div>-->
+<!--          <div class="card-body pt-0">-->
+<!--              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
+</div>
+ 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--   *************end about-section   ***************  -->
-
-
-
-
-
-        <!--   *************seller-section   ***************  -->
-
-        <!--   *************end seller-section   ***************  -->
-
-
-
-
-
-
-          <!--   *************easier-section   ***************  -->
-
-
+        
         <section class="quick-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-11">
-                        <h1>Quick Picks</h1>
+                    <div class="col-9">
+                        <h1>My Services</h1>
                     </div>
-					<div class="col-md-1 d-flex align-items-center"></div>
+                    <div class="col-md-3 d-flex align-items-center"><a class="login-btn" href="/addNewService/">Add New Service</a></div>
+                    {% if se %}
                     {% for s in service %}
 					<div class="col-md-4" style="padding:5px;">
                         <a href="/service/{{s.pk}}">
@@ -184,118 +221,15 @@
                             </a>
 					</div>
                     {% endfor %}
-
-
+                    {% else %}
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8 " style="padding:5px;" ><h3 style="color:Black">No Business Added by you.</h3></div>
+                    {% endif %}
                 </div>
-
-<!--
-
-
-        <footer class="footer-section">
-            <div class="container">
-                <div class="row justify-content-end footer-outer">
-
-                        <div class="col-md-4">
-                            <div class="footer-right-box-outer">
-                                <div class="contact-details">
-                                <h2>Contact Us</h2>
-                                <div class="pb-2 d-flex align-items-center">
-                                    <i class="fa-solid fa-phone-flip"></i>
-                                    <p><span>(392) 251-4377</span></p>
-                                </div>
-                                <div class="d-flex pb-2 align-items-center">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <p><span>Email Me</span></p>
-                                </div>
-                                <div class="d-flex pb-2 align-items-center">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <p><span>4571 Hamill Avenue<br>
-                                        San Diego, CA 92121</span></p>
-                                </div>
-                                </div>
-                                <div class="contact-details">
-                                    <h2>Business Hours</h2>
-                                    <div class="d-flex pb-2 align-items-center">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        <p><span>Monday - Friday</span></p>
-                                    </div>
-                                    <div class="d-flex pb-2 align-items-center">
-                                        <i class="fa-solid fa-clock"></i>
-                                        <p><span>9:00 AM to 6:00 PM</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8 footer-left-box-outer">
-                            <h2>Schedule Your <b><em>FREE</em></b> Consultation</h2>
-                            <form class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email Address" id="inputEmail4">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <input type="phone" class="form-control" placeholder="Phone Number" id="phone">
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea style="height: 150px;" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Type your message here</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-12">
-                                    <button type="submit" class="btn btn-primary schedule-btn">Schedule now</button>
-                                  </div>
-                            </form>
-                        </div>
-
-                    <div class="col-12">
-                        <p class="text-center pt-4">© AP Properties 2022  |  Powered by Postcardmania  | </p>
-                    </div>
-                </div>
-            </div>
-        </footer>-->
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--   *************footer   ***************  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- **** -----  footer ----  **** -- -->
 
         <footer>
-
+ 
         </footer>
 
         <!-- **** -----  footer ----  **** -- -->
@@ -304,15 +238,15 @@
 
 
 
-    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.mi' %}n.js"></script>
 
-    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap' %}/bootstrap.bundle.min.js"></script>
 
-    <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl.carou' %}sel.js"></script>
+    <script type="text/javascript" src="{% static 'js/owl.carou' %}sel.min.js"></script>
     <script type="text/javascript">
         $('.owl-carousel').owlCarousel({
-
+            loop: true,
             margin: 40,
             nav: true,
             responsive: {

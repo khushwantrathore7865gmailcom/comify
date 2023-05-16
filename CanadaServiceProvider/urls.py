@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from service.urls import login
+
 
 urlpatterns = [
                   path('', include('service.urls')),

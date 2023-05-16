@@ -64,10 +64,17 @@
         </li>
 		 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
+            Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/category/Food">Food</a></li>
+            <li><a class="dropdown-item" href="/category/Food"> Food </a>
+			  	 <ul class="submenu dropdown-menu">
+				    <li><a class="dropdown-item" href="/category/Day_Special">Day Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Week_Special">Week Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Month_Special">Month Special</a></li>
+
+				 </ul>
+			  </li>
             <li><a class="dropdown-item" href="/category/Service">Service</a></li>
             <li><a class="dropdown-item" href="/category/Accommadation">Accommodation </a></li>
           </ul>
@@ -76,9 +83,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/addNewService/">Add Your Service</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/addNewService/">Add Your Service</a>-->
+<!--        </li>-->
        </ul>
 
 	<ul class="header-right-text">
@@ -91,7 +98,7 @@
            <i class="fa-regular fa-user"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/MyServices/">My services</a></li>
+            <li><a class="dropdown-item" href="/MyProfile/">My Profile</a></li>
             <li><a class="dropdown-item" href="/logout/">Log Out</a></li>
 
           </ul>
@@ -233,7 +240,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-11">
-                        <h1>Services</h1>
+                        <h1>Today Picks</h1>
                     </div>
 					<div class="col-md-1 d-flex align-items-center"></div>
                     {% for s in service %}

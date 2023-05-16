@@ -14,7 +14,7 @@
     <!--font awesome 6-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-    <!--<link rel="stylesheet" href="fonts/fontawesome/{% static 'css/all.css" />
+    <!--<link rel="stylesheet" href="fonts/fontawesome/css/all.css" />
     <script src="https://kit.fontawesome.com/f2a4dd39db.js" crossorigin="anonymous"></script>-->
     <!--font awesome 6-->
 
@@ -26,9 +26,45 @@
 
     <!-- **** -----  Owl Carousel CSS ----  **** -- -->
 
-    <!-- **** -----  Bootstrap CSS ----  **** -- -->
+    <!-- **** -----  Bootstrap CSS ----  **** -->
 
     <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+
+	<style>
+        .container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.main_view {
+    width: 80%;
+    height: 25rem;
+}
+
+.main_view img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.side_view {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  .side_view {
+display: contents;
+
+}
+.side_view img {
+    width: 9rem;
+    height: 7rem;
+    object-fit: cover;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+    </style>
 
     <!-- **** ----- End of  Bootstrap CSS ----  **** -- -->
 
@@ -38,7 +74,7 @@
 
     <!-- **** ----- custum css  ----  **** -- -->
 
-    <title>Search</title>
+    <title>Taamu</title>
 </head>
 
 <body>
@@ -48,10 +84,12 @@
 
         <!-- **** -----  header ----  **** -- -->
 
-
     <header>
 
-     <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
       <div class="container  header-container-mob">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,8 +149,8 @@
 
   </div>
 </nav>
-
         </header>
+
 
 
         <!-- **** -----  header ----  **** -- -->
@@ -125,11 +163,89 @@
 
 
 
+        <section class="house-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+						<div class="house-image-div main_view">
+						<img src="{{p.profile_pic.url}}" id="main" alt="IMAGE">
+						</div>
+                    </div>
+
+					<div class="col-md-6">
+						<div class="house-text">
+                            <h1 class="mb-4">{{service.service_name}}</h1>
+							<p>{{service.desc}}</p>
+                            <p>{{service.address}}</p>
+                        </div>
+                    </div>
+                                        <div class="side_view">
+                                            {% for p in photo %}
+            <img src="{{p.profile_pic.url}}" onclick="change(this.src)">
+                                            {% endfor %}
+        </div>
+                </div>
+
+				<div class="row mt-5 service-divider">
+				<div class="col-md-4 mt-5 text-center">
+                    <a href={{service.whatsapp}} ><button class="view-btn service-social-btn"><i class="fa-brands fa-whatsapp"></i>Whatsapp</button></a>
+				</div>
+				<div class="col-md-4 mt-5 text-center">
+                    <a href={{service.instagram}}>
+                        <button class="view-btn service-social-btn"><i class="fa-brands fa-instagram"></i>Instagram</button></a>
+				</div>
+				<div class="col-md-4 mt-5 text-center">
+				<button class="view-btn service-social-btn"><i class="fa fa-phone" aria-hidden="true"></i>+917240185303</button>
+				</div>
+				</div>
+
+				 </section>
+
+
+
+
 
         <!--   *************end banner-section   ***************  -->
 
 
 
+
+
+        <!--   *************about-section   ***************  -->
+
+
+
+
+        <section class="quick-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11">
+                        <h1> Related Services</h1>
+                    </div>
+					<div class="col-md-1 d-flex align-items-center"></div>
+                    {% for s in related %}
+
+					<div class="col-md-4" style="padding:5px;">
+                        <a href="/service/{{s.pk}}">
+					<div class="item">
+						<div class="quick-outer">
+							<img src={{s.profile_pic.url}}>
+							<div class="quick-content-outer">
+							<h6>{{s.service_name}}</h6>
+							<p>></p>
+							</div>
+							</div>
+							</div>
+                            </a>
+					</div>
+
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
 
 
 
@@ -147,46 +263,6 @@
         <!--   *************end about-section   ***************  -->
 
 
-
-
-
-        <!--   *************seller-section   ***************  -->
-
-        <!--   *************end seller-section   ***************  -->
-
-
-
-
-
-
-          <!--   *************easier-section   ***************  -->
-
-
-        <section class="quick-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-11">
-                        <h1>Quick Picks</h1>
-                    </div>
-					<div class="col-md-1 d-flex align-items-center"></div>
-                    {% for s in service %}
-					<div class="col-md-4" style="padding:5px;">
-                        <a href="/service/{{s.pk}}">
-					<div class="item">
-						<div class="quick-outer">
-							<img src={{s.profile_pic.url}}>
-							<div class="quick-content-outer">
-							<h6>{{s.service_name}}</h6>
-							<p>></p>
-							</div>
-							</div>
-							</div>
-                            </a>
-					</div>
-                    {% endfor %}
-
-
-                </div>
 
 <!--
 
@@ -303,16 +379,12 @@
     </main>
 
 
-
     <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-
-    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
-
     <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script type="text/javascript">
         $('.owl-carousel').owlCarousel({
-
+            loop: true,
             margin: 40,
             nav: true,
             responsive: {
@@ -328,8 +400,68 @@
             }
         })
     </script>
+<script type="text/javascript">
+//	window.addEventListener("resize", function() {
+//		"use strict"; window.location.reload();
+//	});
 
-    <script type="text/javascript" src="{% static 'js/custum.js' %}"></script>
+
+	document.addEventListener("DOMContentLoaded", function(){
+
+
+    	/////// Prevent closing from click inside dropdown
+		document.querySelectorAll('.dropdown-menu').forEach(function(element){
+			element.addEventListener('click', function (e) {
+			  e.stopPropagation();
+			});
+		})
+
+
+
+		// make it as accordion for smaller screens
+		if (window.innerWidth < 992) {
+
+			// close all inner dropdowns when parent is closed
+			document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+				everydropdown.addEventListener('hidden.bs.dropdown', function () {
+					// after dropdown is hidden, then find all submenus
+					  this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+					  	// hide every submenu as well
+					  	everysubmenu.style.display = 'none';
+					  });
+				})
+			});
+
+			document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+				element.addEventListener('click', function (e) {
+
+				  	let nextEl = this.nextElementSibling;
+				  	if(nextEl && nextEl.classList.contains('submenu')) {
+				  		// prevent opening link if link needs to open dropdown
+				  		e.preventDefault();
+				  		console.log(nextEl);
+				  		if(nextEl.style.display == 'block'){
+				  			nextEl.style.display = 'none';
+				  		} else {
+				  			nextEl.style.display = 'block';
+				  		}
+
+				  	}
+				});
+			})
+		}
+		// end if innerWidth
+
+	});
+	// DOMContentLoaded  end
+</script>
+    <!--<script type="text/javascript" src="{% static 'js/custum.js' %}"></script>-->
+<script>
+    const change = src => {
+    document.getElementById('main').src = src
+}
+</script>
+
 
 </body>
 
