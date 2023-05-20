@@ -18,18 +18,20 @@ def Home(request):
     if request.user.is_authenticated:
 
         u = False
+        try:
+            p = Profile.objects.get(user=request.user)
+        except Profile.DoesNotExist:
+            return redirect('Profile')
     else:
 
         u = True
 
-    # try:
-    #     p = Profile.objects.get(user=request.user)
-    # except Profile.DoesNotExist:
-    #     return redirect('Profile')
+
     b = Baner.objects.all()
     f=0
     if len(b)>0:
         if b[0].Baner_Display:
+            print(b[0].Title)
             f = 1
 
 
@@ -49,6 +51,12 @@ def Login(request):
         print(request.user)
         return redirect('Home')
     else:
+        if request.user.is_authenticated:
+
+            u = False
+        else:
+
+            u = True
         if request.method == 'POST':
             username = request.POST.get('exampleInputEmail1')
             password = request.POST.get('pass')
@@ -64,12 +72,13 @@ def Login(request):
                 print('Username OR password is incorrect')
                 messages.info(request, 'Username OR password is incorrect')
 
-        context = {}
+        context = {'u':u}
         return render(request, 'login.html', context)
 
 
 @login_required(login_url='/login')
 def profile_form(request):
+
     if request.method == "POST":
         name = request.POST.get('name')
         age = request.POST.get('age')
@@ -88,7 +97,7 @@ def profile_form(request):
 
         u = True
 
-    return render(request, 'profile_form.html')
+    return render(request, 'profile_form.html', {'u': u})
 
 
 def signup(request):
@@ -146,6 +155,12 @@ def add_new_Service(request):
 
 
 def desc_service(request, pk):
+    if request.user.is_authenticated:
+
+        u = False
+    else:
+
+        u = True
     service = Service.objects.get(pk=pk)
     photo = service_picture.objects.filter(service=service)
     ph=photo[0]
@@ -156,7 +171,7 @@ def desc_service(request, pk):
     else:
 
         u = True
-    return render(request, 'service2.html', {'service': service, 'related': serv,'photo':photo,'p':ph})
+    return render(request, 'service2.html', {'u':u,'service': service, 'related': serv,'photo':photo,'p':ph})
 
 
 def search(request, string):
@@ -178,9 +193,9 @@ def category(request, string):
     else:
 
         u = True
-    return render(request, 'search.html', {'service': service})
+    return render(request, 'search.html', {'u':u,'service': service})
 
-
+@login_required(login_url='/login')
 def user_Profile(request):
     u = request.user
 
@@ -189,6 +204,7 @@ def user_Profile(request):
         s = True
     else:
         s = False
+
     pr = Profile.objects.get(user=u)
     if request.user.is_authenticated:
 

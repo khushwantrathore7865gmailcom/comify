@@ -91,6 +91,7 @@
 	<ul class="header-right-text">
 <!--	<li><a style="text-decoration:underline;" href="#">Register as professional</a></li>-->
         {% if u %}
+        <li></li>
 	<li><a class="login-btn" href="/login">Login</a></li>
         {% else %}
 	<li class="nav-item dropdown">
@@ -210,8 +211,8 @@
                 <div class="row">
                     
                     <div class="col-md-8 col-sm-12 h-auto">
-                        <h2>{{b.Title}}</h2>
-						<p>{{b.message}}</p>
+                        <h2>{{b.0.Title}}</h2>
+						<p>{{b.0.message}}</p>
                     </div>
 
                     <div class="col-md-4 col-sm-12 h-auto d-flex align-items-center justify-content-center">
@@ -265,89 +266,51 @@
 
                 </div>
            
-<!--
+<footer>
+   <div class="content">
+     <div class="left box">
+       <div class="upper">
+         <div class="topic">About us</div>
+         <p>CodingLab is a channel where you can learn HTML,
+         CSS, and also JavaScript along with creative CSS Animations and Effects.</p>
+       </div>
+       <div class="lower">
+         <div class="topic">Contact us</div>
+         <div class="phone">
+           <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+         </div>
+         <div class="email">
+           <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+         </div>
+       </div>
+     </div>
+     <div class="middle box">
+       <div class="topic">Our Services</div>
+       <div><a href="#">Web Design, Development</a></div>
+       <div><a href="#">Web UX Design, Reasearch</a></div>
+       <div><a href="#">Web User Interface Design</a></div>
+       <div><a href="#">Theme Development, Design</a></div>
+       <div><a href="#">Mobile Application Design</a></div>
+       <div><a href="#">Wire raming & Prototyping</a></div>
+     </div>
+     <div class="right box">
+       <div class="topic">Subscribe us</div>
+       <form action="#">
 
-
-        <footer class="footer-section">
-            <div class="container">
-                <div class="row justify-content-end footer-outer">
-                    
-                        <div class="col-md-4">
-                            <div class="footer-right-box-outer">
-                                <div class="contact-details">
-                                <h2>Contact Us</h2>
-                                <div class="pb-2 d-flex align-items-center">
-                                    <i class="fa-solid fa-phone-flip"></i>
-                                    <p><span>(392) 251-4377</span></p>
-                                </div>
-                                <div class="d-flex pb-2 align-items-center">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <p><span>Email Me</span></p>
-                                </div>
-                                <div class="d-flex pb-2 align-items-center">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <p><span>4571 Hamill Avenue<br>
-                                        San Diego, CA 92121</span></p>
-                                </div>
-                                </div>
-                                <div class="contact-details">
-                                    <h2>Business Hours</h2>
-                                    <div class="d-flex pb-2 align-items-center">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        <p><span>Monday - Friday</span></p>
-                                    </div>
-                                    <div class="d-flex pb-2 align-items-center">
-                                        <i class="fa-solid fa-clock"></i>
-                                        <p><span>9:00 AM to 6:00 PM</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8 footer-left-box-outer">
-                            <h2>Schedule Your <b><em>FREE</em></b> Consultation</h2>
-                            <form class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email Address" id="inputEmail4">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <input type="phone" class="form-control" placeholder="Phone Number" id="phone">
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea style="height: 150px;" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Type your message here</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-12">
-                                    <button type="submit" class="btn btn-primary schedule-btn">Schedule now</button>
-                                  </div>
-                            </form>
-                        </div>
-                    
-                    <div class="col-12">
-                        <p class="text-center pt-4">© AP Properties 2022  |  Powered by Postcardmania  | </p>
-                    </div>
-                </div>
-            </div>
-        </footer>-->
-
-
-
-
-
-
-
-
-
-
-
-
+         <div class="media-icons">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div>
+       </form>
+     </div>
+   </div>
+   <div class="bottom">
+     <p>Copyright © 2020 <a href="#"></a> All rights reserved</p>
+   </div>
+ </footer>
         <!--   *************footer   ***************  -->
 
 
