@@ -91,7 +91,7 @@
 	<ul class="header-right-text">
 <!--	<li><a style="text-decoration:underline;" href="#">Register as professional</a></li>-->
         {% if u %}
-        <li></li>
+        	&nbsp;
 	<li><a class="login-btn" href="/login">Login</a></li>
         {% else %}
 	<li class="nav-item dropdown">
@@ -168,7 +168,7 @@
     <a href="/service/{{f.pk}}">
 <div class="item">
 <div class="item-outer">
-<img src={{f.service.profile_pic.url}}>
+<img src={{f.service.profile_pic.url}} style="height:226px;">
 <div class="content-outer">
 <h6>{{f.service.service_name}}</h6>
 <p>Name2</p>
@@ -250,7 +250,7 @@
                         <a href="/service/{{s.pk}}">
 					<div class="item">
 						<div class="quick-outer">
-							<img src={{s.profile_pic.url}}>
+							<img src={{s.profile_pic.url}} style="height:226px;">
 							<div class="quick-content-outer">
 							<h6>{{s.service_name}}</h6>
 							<p>></p>
