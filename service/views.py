@@ -26,14 +26,12 @@ def Home(request):
 
         u = True
 
-
     b = Baner.objects.all()
-    f=0
-    if len(b)>0:
+    f = 0
+    if len(b) > 0:
         if b[0].Baner_Display:
             print(b[0].Title)
             f = 1
-
 
     feature = Feature_service.objects.all()
     if len(feature) > 0:
@@ -72,13 +70,12 @@ def Login(request):
                 print('Username OR password is incorrect')
                 messages.info(request, 'Username OR password is incorrect')
 
-        context = {'u':u}
+        context = {'u': u}
         return render(request, 'login.html', context)
 
 
 @login_required(login_url='/login')
 def profile_form(request):
-
     if request.method == "POST":
         name = request.POST.get('name')
         age = request.POST.get('age')
@@ -139,7 +136,7 @@ def add_new_Service(request):
         print(photo)
 
         ser = Service(provider=request.user, category=category, service_name=name, address=address, desc=desc,
-                      whatsapp=wh, instagram=insta, phone=phone,profile_pic=photo[0])
+                      whatsapp=wh, instagram=insta, phone=phone, profile_pic=photo[0])
         ser.save()
         for p in photo:
             ph = service_picture(service=ser, profile_pic=p)
@@ -151,7 +148,55 @@ def add_new_Service(request):
     else:
 
         u = True
-    return render(request, 'add-service.html')
+    return render(request, 'add-service.html',{'u':u})
+@login_required(login_url='/login')
+def delete(request,pk):
+    if request.user.is_authenticated:
+
+        u = False
+        user = request.user
+        service = Service.objects.get(pk=pk)
+        if service.provider == user:
+            service.delete()
+            return redirect('myProfile')
+
+    else:
+
+        u = True
+        return redirect('Home')
+
+
+@login_required(login_url='/login')
+def edit_Service(request, pk):
+    s = Service.objects.get(pk=pk)
+    ser_ph = service_picture.objects.filter(service=s)
+    if request.method == 'POST':
+        category = request.POST.get('cat')
+        subcategory = request.POST.get('specificSizeSelect')
+        name = request.POST.get('name')
+        address = request.POST.get('address')
+        desc = request.POST.get('desc')
+        photo = request.FILES.getlist('pp')
+        whatsapp = request.POST.get('whatsapp')
+        phone = request.POST.get('phone')
+        insta = request.POST.get('insta')
+        wh = "https://wa.me/" + whatsapp
+        print(photo)
+
+        ser = Service(provider=request.user, category=category, service_name=name, address=address, desc=desc,
+                      whatsapp=wh, instagram=insta, phone=phone, profile_pic=photo[0])
+        ser.save()
+        for p in photo:
+            ph = service_picture(service=ser, profile_pic=p)
+            ph.save()
+        return redirect("Home")
+    if request.user.is_authenticated:
+
+        u = False
+    else:
+
+        u = True
+    return render(request, 'edit-service.html', {'u': u, 'ser': s, 'ser_pic': ser_ph})
 
 
 def desc_service(request, pk):
@@ -163,15 +208,16 @@ def desc_service(request, pk):
         u = True
     service = Service.objects.get(pk=pk)
     photo = service_picture.objects.filter(service=service)
-    ph=photo[0]
+    ph = photo[0]
     serv = Service.objects.all()
     if request.user.is_authenticated:
-
+        user = request.user
         u = False
     else:
 
         u = True
-    return render(request, 'service2.html', {'u':u,'service': service, 'related': serv,'photo':photo,'p':ph})
+    return render(request, 'service2.html',
+                  {'u': u, 'user': user, 'service': service, 'related': serv, 'photo': photo, 'p': ph})
 
 
 def search(request, string):
@@ -193,7 +239,8 @@ def category(request, string):
     else:
 
         u = True
-    return render(request, 'search.html', {'u':u,'service': service})
+    return render(request, 'search.html', {'u': u, 'service': service})
+
 
 @login_required(login_url='/login')
 def user_Profile(request):
