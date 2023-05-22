@@ -148,9 +148,11 @@ def add_new_Service(request):
     else:
 
         u = True
-    return render(request, 'add-service.html',{'u':u})
+    return render(request, 'add-service.html', {'u': u})
+
+
 @login_required(login_url='/login')
-def delete(request,pk):
+def delete(request, pk):
     if request.user.is_authenticated:
 
         u = False
@@ -214,7 +216,7 @@ def desc_service(request, pk):
         user = request.user
         u = False
     else:
-        user=None
+        user = None
         u = True
     return render(request, 'service2.html',
                   {'u': u, 'user': user, 'service': service, 'related': serv, 'photo': photo, 'p': ph})
