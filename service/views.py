@@ -202,21 +202,15 @@ def edit_Service(request, pk):
 
 
 def desc_service(request, pk):
-    if request.user.is_authenticated:
-
-        u = False
-    else:
-
-        u = True
     service = Service.objects.get(pk=pk)
     photo = service_picture.objects.filter(service=service)
     ph = photo[0]
     serv = Service.objects.all()
+    user = None
     if request.user.is_authenticated:
         user = request.user
         u = False
     else:
-        user = None
         u = True
     return render(request, 'service2.html',
                   {'u': u, 'user': user, 'service': service, 'related': serv, 'photo': photo, 'p': ph})
