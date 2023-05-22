@@ -214,7 +214,7 @@ def desc_service(request, pk):
         user = request.user
         u = False
     else:
-
+        user=None
         u = True
     return render(request, 'service2.html',
                   {'u': u, 'user': user, 'service': service, 'related': serv, 'photo': photo, 'p': ph})
