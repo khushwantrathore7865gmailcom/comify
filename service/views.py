@@ -206,7 +206,7 @@ def desc_service(request, pk):
     photo = service_picture.objects.filter(service=service)
     ph = photo[0]
     serv = Service.objects.all()
-    user = None
+    user = ''
     if request.user.is_authenticated:
         user = request.user
         u = False
