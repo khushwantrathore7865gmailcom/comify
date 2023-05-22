@@ -206,12 +206,12 @@ def desc_service(request, pk):
     photo = service_picture.objects.filter(service=service)
     ph = photo[0]
     serv = Service.objects.all()
-
+    usr = request.user
     if request.user.is_authenticated:
-        usr = request.user
+
         u = False
     else:
-        usr =None
+
         u = True
     return render(request, 'service2.html',
                   {'u': u, 'user': usr, 'service': service, 'related': serv, 'photo': photo, 'p': ph})
