@@ -700,209 +700,6 @@ font-size:20px;
     left: 158px;
 }
 
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:1200px)
-{
-    .seller-image-outer {
-        width: 265px;
-        top: -15%;
-        transform: translate(-50%, 15%);
-      }
-      button.banner-btn {
-        font-size: 15px;
-        
-    }
-    .review-outer-box {
-       
-        height: 330px;
-      }
-      .review-section {
-        bottom: -28%;
-      }
-    .about-right-outer h2 {
-      display: block;
-    }
-    .seller-image-box-outer {
-        height: 210px;
-      }
-      .seller-box-text {
-        padding: 0 2rem;
-      }
-      .easier-box-outer {
-        min-height: 190px;
-      }
-      .footer-right-box-outer {
-        width: 380px;
-      }
-      .footer-left-box-outer {
-        padding: 0 3rem;
-      }
-}
-@media screen and (max-width:992px)
-{
-    .logo-outer-a {
-        width: 35%;
-        left: 0;
-      }
-      .header-container-mob
-      {
-        height: 75px;
-      }
-}
-
-
-
-
-
-@media screen and (min-width:768px) {
-    .column-5 {
-        width: 20%;
-        flex: 0 0 auto;
-    }
-    
-}
-
-
-@media screen and (max-width:768px) {
-    .column-5 {
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .logo-outer-a{
-        position:unset;
-    }
-    #navbarNavDropdown{
-        z-index: 999;
-        background-color: white !important;
-    }
-    .navbar-list-outer{
-        height: unset;
-    }
-    .review-section{
-        position: unset;
-    }
-    .banner-section{
-        padding:50px 15px;
-    }
-    .banner-section form{
-        flex-direction: column;
-    }
-    input.banner-input{
-        width:100%
-    }
-    button.banner-btn {
-        width: 100%;
-        padding: 15px 0;
-        margin: 15px 0;
-    }
-    button.navbar-toggler{
-        box-shadow: none!important;
-    }
-    .review-section .row{
-        gap:15px 0;
-    }
-    
-    .about-right-outer {
-        padding: 3rem 1rem;
-      }
-    .about-section {
-        padding: 3rem 0;
-      }
-      .about-image-outer
-      {
-        position: unset;
-        transform: unset;
-      }
-      .about-main-outer {
-        width: 100%;
-      }
-      .seller-image-outer {
-        width: 90%;
-      }
-      .seller-outer {
-        min-height: 440px;
-        margin-bottom: 4rem;
-      }
-      .seller-image-box-outer {
-        height: 280px;
-      }
-      .seller-section {
-        padding: 2rem 0;
-      }
-      .easier-box-outer {
-        min-height: 190px;
-        margin-bottom: 4rem;
-      }
-      .easier-section {
-        padding: 2rem 0;
-      }
-      .testimonials-section {
-        padding: 2rem 0;
-      }
-      .footer-section {
-        padding: 2rem 0;
-      }
-      .footer-outer {
-        width: 100%;
-        margin: auto;
-      }
-      .footer-right-box-outer {
-        width: 100%;
-        position: unset;
-        transform: unset;
-        margin-bottom: 3rem;
-      }
-}
-
-
-
-
-
-
-
-
-
-
-@media all and (min-width: 992px) {
-
-	footer .dropdown-menu li{
-		position: relative;
-	}
-	footer .dropdown-menu .submenu{ 
-		display: none;
-		position: absolute;
-		left:100%; top:-7px;
-	}
-	footer .dropdown-menu .submenu-left{ 
-		right:100%; left:auto;
-	}
-
-	footer .dropdown-menu > li:hover{ background-color: #f1f1f1 }
-	footer .dropdown-menu > li:hover > .submenu{
-		display: block;
-	}
-}	
-/* ============ desktop view .end// ============ */
-
-/* ============ small devices ============ */
-@media (max-width: 991px) {
-
-.dropdown-menu .dropdown-menu{
-		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
-}
-
-}	
-/* ============ small devices .end// ============ */
 footer{
      width: 100%;
     position: absolute;
@@ -1006,28 +803,205 @@ footer a{
 footer a:hover{
   color: #eb2f06;
 }
-@media (max-width:1100px) {
-  footer .content .middle{
-    padding-left: 50px;
-  }
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1200px)
+{
+    .seller-image-outer {
+        width: 265px;
+        top: -15%;
+        transform: translate(-50%, 15%);
+      }
+      button.banner-btn {
+        font-size: 15px;
+        
+    }
+    .review-outer-box {
+       
+        height: 330px;
+      }
+      .review-section {
+        bottom: -28%;
+      }
+    .about-right-outer h2 {
+      display: block;
+    }
+    .seller-image-box-outer {
+        height: 210px;
+      }
+      .seller-box-text {
+        padding: 0 2rem;
+      }
+      .easier-box-outer {
+        min-height: 190px;
+      }
+      .footer-right-box-outer {
+        width: 380px;
+      }
+      .footer-left-box-outer {
+        padding: 0 3rem;
+      }
 }
-@media (max-width:950px){
-  footer .content .box{
-    width: 50%;
-  }
-  .content .right{
-    margin-top: 40px;
-  }
+@media screen and (max-width:992px)
+{
+    .logo-outer-a {
+        width: 35%;
+        left: 0;
+      }
+      .header-container-mob
+      {
+        height: 75px;
+      }
 }
-@media (max-width:560px){
-  footer{
-    position: relative;
-  }
-  footer .content .box{
-    width: 100%;
-    margin-top: 30px;
-  }
-  footer .content .middle{
-    padding-left: 0;
-  }
+
+
+
+
+
+@media screen and (min-width:768px) {
+    .column-5 {
+        width: 20%;
+        flex: 0 0 auto;
+    }
+    
 }
+
+
+@media screen and (max-width:768px) {
+    .column-5 {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .logo-outer-a{
+        position:unset;
+    }
+    #navbarNavDropdown{
+        z-index: 999;
+        background-color: #000;
+    }
+    .navbar-list-outer{
+        height: unset;
+    }
+    .review-section{
+        position: unset;
+    }
+    .banner-section{
+        padding:50px 15px;
+    }
+    .banner-section form{
+        flex-direction: column;
+    }
+    input.banner-input{
+        width:100%
+    }
+    button.banner-btn {
+        width: 100%;
+        padding: 15px 0;
+        margin: 15px 0;
+    }
+    button.navbar-toggler{
+        box-shadow: none!important;
+    }
+    .review-section .row{
+        gap:15px 0;
+    }
+    
+    .about-right-outer {
+        padding: 3rem 1rem;
+      }
+    .about-section {
+        padding: 3rem 0;
+      }
+      .about-image-outer
+      {
+        position: unset;
+        transform: unset;
+      }
+      .about-main-outer {
+        width: 100%;
+      }
+      .seller-image-outer {
+        width: 90%;
+      }
+      .seller-outer {
+        min-height: 440px;
+        margin-bottom: 4rem;
+      }
+      .seller-image-box-outer {
+        height: 280px;
+      }
+      .seller-section {
+        padding: 2rem 0;
+      }
+      .easier-box-outer {
+        min-height: 190px;
+        margin-bottom: 4rem;
+      }
+      .easier-section {
+        padding: 2rem 0;
+      }
+      .testimonials-section {
+        padding: 2rem 0;
+      }
+      .footer-section {
+        padding: 2rem 0;
+      }
+      .footer-outer {
+        width: 100%;
+        margin: auto;
+      }
+      .footer-right-box-outer {
+        width: 100%;
+        position: unset;
+        transform: unset;
+        margin-bottom: 3rem;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width: 992px) {
+
+	.dropdown-menu li{
+		position: relative;
+	}
+	.dropdown-menu .submenu{ 
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.dropdown-menu .submenu-left{ 
+		right:100%; left:auto;
+	}
+
+	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+	.dropdown-menu > li:hover > .submenu{
+		display: block;
+	}
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+
+.dropdown-menu .dropdown-menu{
+		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+}
+
+}	
+/* ============ small devices .end// ============ */
