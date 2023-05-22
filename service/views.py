@@ -208,13 +208,13 @@ def desc_service(request, pk):
     serv = Service.objects.all()
 
     if request.user.is_authenticated:
-        # usr = request.user
+        usr = request.user
         u = False
     else:
-        # usr =None
+        usr =None
         u = True
     return render(request, 'service2.html',
-                  {'u': u, 'service': service, 'related': serv, 'photo': photo, 'p': ph})
+                  {'u': u, 'user': usr, 'service': service, 'related': serv, 'photo': photo, 'p': ph})
 
 
 def search(request, string):
