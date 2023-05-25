@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.db.models.expressions import RawSQL
 
 # Create your models here.
 class Service(models.Model):
@@ -13,7 +13,8 @@ class Service(models.Model):
     whatsapp = models.CharField(max_length=12, null=True)
     instagram = models.CharField(max_length=250, null=True)
     phone = models.CharField(max_length=12, null=True)
-    profile_pic = models.ImageField(upload_to='service_profile/', null=True,default='service_profile/download.png')
+    profile_pic = models.ImageField(upload_to='service_profile/', null=True, default='service_profile/download.png')
+
 
 
 class service_picture(models.Model):
@@ -27,7 +28,8 @@ class Profile(models.Model):
     address = models.CharField(max_length=250)
     gender = models.CharField(max_length=250, null=True)
     age = models.CharField(max_length=250, null=True)
-    profile_pic = models.ImageField(upload_to='profile_picture/', null=True,default='profile_picture/p1.png')
+    profile_pic = models.ImageField(upload_to='profile_picture/', null=True, default='profile_picture/p1.png')
+
 
 
 class Feature_service(models.Model):

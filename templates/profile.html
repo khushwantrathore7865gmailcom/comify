@@ -207,11 +207,11 @@
                     <div class="col-md-3 d-flex align-items-center"><a class="login-btn" href="/addNewService/">Add New Service</a></div>
                     {% if se %}
                     {% for s in service %}
-					<div class="col-md-4" style="padding:5px;">
+					<div class="col-md-3 a12" >
                         <a href="/service/{{s.pk}}">
 					<div class="item">
 						<div class="quick-outer">
-							<img src={{s.profile_pic.url}} style="height:226px;">
+							<img src={{s.profile_pic.url}}>
 							<div class="quick-content-outer">
 							<h6>{{s.service_name}}</h6>
 							<p>></p>

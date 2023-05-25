@@ -40,7 +40,9 @@
 
     <title>Add service</title>
 </head>
+<style>
 
+</style>
 <body>
 
 
@@ -133,6 +135,13 @@
                             <form class="add-service-form" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
 							<h4><i class="fa-regular fa-circle-plus"></i>Add service</h4>
+                                                          {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:black;">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 							<div class="row mt-5">
 							
 										<div class="col-md-3">
@@ -182,20 +191,24 @@
 							<div class="col-md-4">
 							 <div class="input-group custom-file-button">
     <label class="input-group-text form-control upload-label" for="pp">Choose A Image<br><img src="{% static 'images/upload.png' %}"></label>
-    <input type="file" class="form-control invisible" id="pp" name="pp"accept="image/x-png,image/gif,image/jpeg" multiple>
+    <input type="file" class="form-control invisible" id="pp" name="pp" accept="image/x-png,image/gif,image/jpeg" multiple>
   </div>
 							</div>
+<div class="previewService">
+</div>
 
-							<div class="mt-3 login-btn-outer">
-							<button type="submit" class="btn btn-primary login-btn submit-btn">Submit</button>
+							<div class="mt-3 login-btn-outer submitService">
+							<button type="submit" class="btn btn-primary login-btn submit-btn ">Submit</button>
 
 							</div>
+                            </div>
 							</form>
                         </div>
                     </div>
 
                 </div>
             </div>
+
 
         </section>
 
@@ -271,10 +284,36 @@ $('#filecount').filestyle({
 });
 $("#image").on("change", function() {
     if ($("#pp")[0].files.length > 5) {
-        alert("You can select only 2 images");
+        alert("You can select only 5 images");
     }
 });
 </script>
+    <script>
+        $(function() {
+    // Multiple images preview in browser
+    var imagesPreview = function(input, placeToInsertImagePreview) {
+
+        if (input.files) {
+            var filesAmount = input.files.length;
+
+            for (i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                }
+
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+
+    };
+
+    $('#pp').on('change', function() {
+        imagesPreview(this, 'div.previewService');
+    });
+});
+    </script>
     <script type="text/javascript" src="js/custum.js"></script>
 
 </body>

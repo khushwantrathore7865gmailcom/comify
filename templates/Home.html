@@ -98,7 +98,9 @@
 	<ul class="header-right-text">
 <!--	<li><a style="text-decoration:underline;" href="#">Register as professional</a></li>-->
         {% if u %}
-        	&nbsp;
+
+        	&nbsp;<li class="nav-item"> </li>
+        <li></li>
 	<li><a class="login-btn" href="/login">Login</a></li>
         {% else %}
 	<li class="nav-item dropdown">
@@ -177,9 +179,9 @@
 <div class="owl-carousel">
     {% for f in feat %}
     <a href="/service/{{f.pk}}">
-<div class="item">
+<div class="item b21">
 <div class="item-outer">
-<img src={{f.service.profile_pic.url}} style="height:226px;">
+<img src={{f.service.profile_pic.url}} style="">
 <div class="content-outer">
 <h6>{{f.service.service_name}}</h6>
 <p>Name2</p>
@@ -257,11 +259,11 @@
 					<div class="col-md-1 d-flex align-items-center"></div>
                     {% for s in service %}
 
-					<div class="col-md-4" style="padding:5px;">
+					<div class="col-md-3 a12" >
                         <a href="/service/{{s.pk}}">
 					<div class="item">
 						<div class="quick-outer">
-							<img src={{s.profile_pic.url}} style="height:226px;">
+							<img src={{s.profile_pic.url}} >
 							<div class="quick-content-outer">
 							<h6>{{s.service_name}}</h6>
 							<p>></p>

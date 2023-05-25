@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 from django.contrib.auth.models import User
 from .forms import RegisterForm
+import geopy.distance
 
 
 # Create your views here.
@@ -22,8 +23,10 @@ def Home(request):
             p = Profile.objects.get(user=request.user)
         except Profile.DoesNotExist:
             return redirect('Profile')
-    else:
+        service = Service.objects.all()
 
+    else:
+        service = Service.objects.all()
         u = True
 
     b = Baner.objects.all()
@@ -38,7 +41,6 @@ def Home(request):
         len_feature = True
     else:
         len_feature = False
-    service = Service.objects.all()
 
     return render(request, "Home.html",
                   {'flag': f, 'b': b, 'u': u, 'len_f': len_feature, "feat": feature, 'service': service})
@@ -123,25 +125,33 @@ def signup(request):
 @login_required(login_url='/login')
 def add_new_Service(request):
     if request.method == 'POST':
+
         category = request.POST.get('cat')
+        print(category)
         subcategory = request.POST.get('specificSizeSelect')
+        print(subcategory)
         name = request.POST.get('name')
+        print(name)
         address = request.POST.get('address')
         desc = request.POST.get('desc')
         photo = request.FILES.getlist('pp')
         whatsapp = request.POST.get('whatsapp')
         phone = request.POST.get('phone')
         insta = request.POST.get('insta')
-        wh = "https://wa.me/" + whatsapp
-        print(photo)
+        if category == 'Select Category' or subcategory == 'Select Category' or name == '' or address == '' or desc == '' or len(photo) == 0 or whatsapp == '' or insta == '' or phone == '':
+            messages.error(request, 'Enter data in all fields ')
+        else:
+            wh = "https://wa.me/" + whatsapp
 
-        ser = Service(provider=request.user, category=category, service_name=name, address=address, desc=desc,
-                      whatsapp=wh, instagram=insta, phone=phone, profile_pic=photo[0])
-        ser.save()
-        for p in photo:
-            ph = service_picture(service=ser, profile_pic=p)
-            ph.save()
-        return redirect("Home")
+            print(photo)
+
+            ser = Service(provider=request.user, category=category, service_name=name, address=address, desc=desc,
+                          whatsapp=wh, instagram=insta, phone=phone, profile_pic=photo[0])
+            ser.save()
+            for p in photo:
+                ph = service_picture(service=ser, profile_pic=p)
+                ph.save()
+            return redirect("Home")
     if request.user.is_authenticated:
 
         u = False

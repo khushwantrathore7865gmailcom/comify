@@ -32,7 +32,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
 
 	<style>
-        .container {
+        .icontainer {
     margin: 0 auto;
     width: 90%;
 }
@@ -46,6 +46,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    text-align:center;
 }
 
 .side_view {
@@ -58,8 +59,8 @@ display: contents;
 
 }
 .side_view img {
-    width: 9rem;
-    height: 7rem;
+    width: 4rem;
+    height: 2rem;
     object-fit: cover;
     cursor: pointer;
     margin: 0.5rem;
@@ -164,34 +165,35 @@ display: contents;
 
 
         <section class="house-section">
-            <div class="container">
+            <div class="container icontainer">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
 						<div class="house-image-div main_view">
 						<img src="{{p.profile_pic.url}}" id="main" alt="IMAGE">
 						</div>
+                        <div class="side_view">
+                                            {% for p in photo %}
+            <img src="{{p.profile_pic.url}}" onclick="change(this.src)">
+                                            {% endfor %}
+        </div>
                     </div>
 
-					<div class="col-md-6">
+					<div class="col-md-5">
 						<div class="house-text">
                             <h1 class="mb-4">{{service.service_name}}</h1>
 							<p>{{service.desc}}</p>
                             <p>{{service.address}}</p>
                         </div>
                     </div>
-                                        <div class="side_view">
-                                            {% for p in photo %}
-            <img src="{{p.profile_pic.url}}" onclick="change(this.src)">
-                                            {% endfor %}
-        </div>
+
                 </div>
 
 				<div class="row mt-5 service-divider">
 				<div class="col-md-4 mt-5 text-center">
-                    <a href={{service.whatsapp}} ><button class="view-btn service-social-btn"><i class="fa-brands fa-whatsapp"></i>Whatsapp</button></a>
+                    <a href={{service.whatsapp}} target="_blank"><button class="view-btn service-social-btn"><i class="fa-brands fa-whatsapp"></i>Whatsapp</button></a>
 				</div>
 				<div class="col-md-4 mt-5 text-center">
-                    <a href={{service.instagram}}>
+                    <a href={{service.instagram}} target="_blank">
                         <button class="view-btn service-social-btn"><i class="fa-brands fa-instagram"></i>Instagram</button></a>
 				</div>
 				<div class="col-md-4 mt-5 text-center">
@@ -210,6 +212,8 @@ display: contents;
 
                 {% endif %}
 </div>
+
+            </div>
 				 </section>
 
 
@@ -235,12 +239,11 @@ display: contents;
                     </div>
 					<div class="col-md-1 d-flex align-items-center"></div>
                     {% for s in related %}
-
-					<div class="col-md-4" style="padding:5px;">
+					<div class="col-md-3 a12" >
                         <a href="/service/{{s.pk}}">
 					<div class="item">
 						<div class="quick-outer">
-							<img src={{s.profile_pic.url}} style="height:226px;">
+							<img src={{s.profile_pic.url}} >
 							<div class="quick-content-outer">
 							<h6>{{s.service_name}}</h6>
 							<p>></p>
