@@ -2,13 +2,50 @@
 .a12{
 padding:5px;
 }
+.a12 img{
+height:220px;
+}
+
+.c12{
+width:206px;!important
+height:245px;
+
+}
+.c12 button{
+height:10px;
+}
+.c12 img{
+height:190px;
+width:206px;
+}
 @media screen and (max-width:768px){
 .a12{
 width:206px;!important
 height:245px;
 
 }
+.c12{
+width:206px;!important
+height:245px;
+
+}
+.c12 button{
+height:10px;
+}
+.c12 img{
+height:190px;
+width:206px;
+}
 .a12 img{
+height:190px;
+width:206px;
+}
+.b12{
+width:190px;!important
+height:245px;
+padding:5px;
+}
+.b12 img{
 height:190px;
 width:206px;
 }

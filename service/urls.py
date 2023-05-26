@@ -1,5 +1,6 @@
 from django.urls import path, include, reverse_lazy
-from .views import Home, Login, signup, add_new_Service, desc_service, search, category, user_Profile,register,profile_form,delete
+from .views import Home, Login, signup, add_new_Service, desc_service, search, category, user_Profile, register, \
+    profile_form, delete, edit_Service,deletePic
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -12,7 +13,9 @@ urlpatterns = [
     path('addNewService/', add_new_Service, name='addNewService'),
     path('service/<int:pk>', desc_service, name='descService'),
     path('search/<str:string>', search, name='search'),
-    path('delete/<int:pk>',delete,name='delete'),
+    path('delete/<int:pk>', delete, name='delete'),
+    path('deletePic/<int:pk>', deletePic, name='deletePic'),
+    path('edit/<int:pk>', edit_Service, name='edit'),
     path('category/<str:string>', category, name='category'),
     path('MyProfile/', user_Profile, name='myProfile'),
     path('Profile/', profile_form, name='Profile'),

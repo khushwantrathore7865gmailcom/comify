@@ -138,7 +138,8 @@ def add_new_Service(request):
         whatsapp = request.POST.get('whatsapp')
         phone = request.POST.get('phone')
         insta = request.POST.get('insta')
-        if category == 'Select Category' or subcategory == 'Select Category' or name == '' or address == '' or desc == '' or len(photo) == 0 or whatsapp == '' or insta == '' or phone == '':
+        if category == 'Select Category' or name == '' or address == '' or desc == '' or len(
+                photo) == 0 or whatsapp == '' or insta == '' or phone == '':
             messages.error(request, 'Enter data in all fields ')
         else:
             wh = "https://wa.me/" + whatsapp
@@ -179,6 +180,24 @@ def delete(request, pk):
 
 
 @login_required(login_url='/login')
+def deletePic(request, pk):
+    if request.user.is_authenticated:
+
+        u = False
+        user = request.user
+        serv_pic = service_picture.objects.get(pk=pk)
+        ser = serv_pic.service
+        if ser.provider == user:
+            serv_pic.delete()
+            return redirect('edit', ser.pk)
+
+    else:
+
+        u = True
+        return redirect('Home')
+
+
+@login_required(login_url='/login')
 def edit_Service(request, pk):
     s = Service.objects.get(pk=pk)
     ser_ph = service_picture.objects.filter(service=s)
@@ -208,7 +227,7 @@ def edit_Service(request, pk):
     else:
 
         u = True
-    return render(request, 'edit-service.html', {'u': u, 'ser': s, 'ser_pic': ser_ph})
+    return render(request, 'edit_service.html', {'u': u, 'ser': s, 'ser_pic': ser_ph})
 
 
 def desc_service(request, pk):

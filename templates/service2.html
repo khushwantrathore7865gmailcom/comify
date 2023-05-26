@@ -202,7 +202,10 @@ display: contents;
 
                 {% if user == service.provider %}
 
-
+                <div class="col-md-4 mt-5 text-center">
+                    <a href="/edit/{{service.pk}}">
+                        <button class="view-btn service-social-btn" ><i class="fa fa-edit"></i>Edit</button></a>
+				</div>
 				<div class="col-md-4 mt-5 text-center">
                     <a href="/delete/{{service.pk}}">
                         <button class="view-btn service-social-btn" style="background-color:red;"><i class="fa fa-remove"></i>Delete</button></a>

@@ -205,9 +205,10 @@
                         <h1>My Services</h1>
                     </div>
                     <div class="col-md-3 d-flex align-items-center"><a class="login-btn" href="/addNewService/">Add New Service</a></div>
+                    <div class="col-md-12"></div>
                     {% if se %}
                     {% for s in service %}
-					<div class="col-md-3 a12" >
+					<div class="col-md-3 b12" >
                         <a href="/service/{{s.pk}}">
 					<div class="item">
 						<div class="quick-outer">
@@ -222,6 +223,7 @@
 					</div>
                     {% endfor %}
                     {% else %}
+                    <div class="col-md-12"></div>
                     <div class="col-md-4"></div>
                     <div class="col-md-8 " style="padding:5px;" ><h3 style="color:Black">No Business Added by you.</h3></div>
                     {% endif %}
