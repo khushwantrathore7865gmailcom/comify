@@ -128,7 +128,7 @@
 
 
         <section class="add-service-section">
-            <div class="container">
+            <div class="container ">
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="service-outer">
@@ -211,45 +211,68 @@
                                 <div class="col-md-2"></div>
 							<div class="col-md-4">
 							 <div class="input-group custom-file-button">
-    <label class="input-group-text form-control upload-label" for="pp">Choose A Image<br><img src="{% static 'images/upload.png' %}"></label>
+    <label class="input-group-text form-control upload-label" for="pp">Add More Image<br><img src="{% static 'images/upload.png' %}"></label>
     <input type="file" class="form-control invisible" id="pp" name="pp" accept="image/x-png,image/gif,image/jpeg" multiple>
   </div>
 							</div>
 <div class="previewService">
 </div>
+
 <section class="quick-section">
-            <div class="container">
+            <div class="container" style="padding:0px;">
                 <div class="row">
                     <div class="col-11">
                         <h4>Images Uploaded</h4>
                     </div>
 					<div class="col-md-1 d-flex align-items-center"></div>
                     {% for s in ser_pic %}
+                    {% if s.is_profile %}
+                    <div class="col-md-3 c12" >
 
+					<div class="item">
+						<div class="quick-outer">
+							<img src={{s.profile_pic.url}} >
+<div class="quick-content-outer">
+
+
+                             <label class="input-group-text form-control upload-label" for="Epp" style="color:white">Update<br></label>
+    <input type="file" class="form-control invisible" id="Epp" name="Epp" accept="image/x-png,image/gif,image/jpeg" >
+
+
+
+
+ </div>
+							</div>
+							</div>
+
+					</div>
+                    {% endif %}
+                    {% endfor %}
+                    {% for s in ser_pic %}
+{% if s.is_profile %}
+                    {% else %}
 					<div class="col-md-3 c12" >
 
 					<div class="item">
 						<div class="quick-outer">
 							<img src={{s.profile_pic.url}} >
-							<div class="quick-content-outer">
+<div class="quick-content-outer">
 
-                                    {% if s == ser_pic.0 %}
 
-                                     <div class="input-group custom-file-button" >
-    <label class="input-group-text form-control upload-label" for="pp" style="background-color:#fff500;border-radius:8px;" >Update A Image</label>
-    <input type="file" class="form-control invisible" id="ppic" name="ppic" accept="image/x-png,image/gif,image/jpeg" multiple>
-  </div>
-                                    {% else %}
-                                <a href="/deletePic/{{s.pk}}">
-                                    <button type="submit" class="btn btn-primary login-btn  ">Delete</button></a>
-                                {% endif %}
-							</div>
+
+
+                                <a href="/deletePic/{{s.pk}}" class="submit222" style="height:55.6px;padding:18px;">
+                                  <i class="fa fa-remove"></i> Delete</a>
+
+
+
+ </div>
 							</div>
 							</div>
 
 					</div>
 
-
+ {% endif %}
                     {% endfor %}
 
 

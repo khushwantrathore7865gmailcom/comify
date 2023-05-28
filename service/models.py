@@ -20,6 +20,7 @@ class Service(models.Model):
 class service_picture(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     profile_pic = models.ImageField(upload_to='service_profile/', null=True)
+    is_profile = models.BooleanField(default=False)
 
 
 class Profile(models.Model):

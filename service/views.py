@@ -8,7 +8,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 from django.contrib.auth.models import User
 from .forms import RegisterForm
-import geopy.distance
 
 
 # Create your views here.
@@ -200,6 +199,7 @@ def deletePic(request, pk):
 @login_required(login_url='/login')
 def edit_Service(request, pk):
     s = Service.objects.get(pk=pk)
+
     ser_ph = service_picture.objects.filter(service=s)
     if request.method == 'POST':
         category = request.POST.get('cat')
@@ -208,15 +208,43 @@ def edit_Service(request, pk):
         address = request.POST.get('address')
         desc = request.POST.get('desc')
         photo = request.FILES.getlist('pp')
+        pphoto = request.FILES.get('Epp')
         whatsapp = request.POST.get('whatsapp')
         phone = request.POST.get('phone')
         insta = request.POST.get('insta')
         wh = "https://wa.me/" + whatsapp
         print(photo)
+        print(address)
+        ser = Service.objects.get(pk=pk)
+        if pphoto is None:
+            ser.category = category
+            ser.service_name = name
+            ser.address = address
+            ser.desc = desc
+            ser.whatsapp = wh
+            ser.instagram = insta
+            ser.phone = phone
 
-        ser = Service(provider=request.user, category=category, service_name=name, address=address, desc=desc,
-                      whatsapp=wh, instagram=insta, phone=phone, profile_pic=photo[0])
-        ser.save()
+            ser.save()
+        else:
+            ser.profile_pic = pphoto
+            ser.category = category
+            ser.service_name = name
+            ser.address = address
+            ser.desc = desc
+            ser.whatsapp = wh
+            ser.instagram = insta
+            ser.phone = phone
+
+            ser.save()
+            try:
+                pi = service_picture.objects.get(service=ser, is_profile=True)
+            except service_picture.DoesNotExist:
+                pi = service_picture.objects.filter(service=ser)[0]
+            pi.is_profile = False
+            pi.save()
+            p = service_picture(service=ser, profile_pic=pphoto, is_profile=True)
+            p.save()
         for p in photo:
             ph = service_picture(service=ser, profile_pic=p)
             ph.save()
