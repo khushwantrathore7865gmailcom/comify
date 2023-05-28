@@ -806,6 +806,11 @@ footer .content .lower i{
 footer .content .middle{
   padding-left: 80px;
 }
+@media screen and (max-width:768px){
+footer .content .middle{
+  padding-left: 13px;
+}
+}
 footer .content .middle a{
   line-height: 32px;
 }
