@@ -9,6 +9,8 @@ from django.views.generic import View
 from django.contrib.auth.models import User
 from .forms import RegisterForm
 
+from django.db.models import Q
+
 
 # Create your views here.
 def Home(request):
@@ -275,7 +277,9 @@ def desc_service(request, pk):
 
 
 def search(request, string):
-    service = Service.objects.filter(service_name__icontains=string)
+    service = Service.objects.filter(
+        Q(service_name__icontains=string) | Q(provider__icontains=string) | Q(address__icontains=string) | Q(
+            category__icontains=string) | Q(subcategory__icontains=string) | Q(desc__icontains=string))
     if request.user.is_authenticated:
 
         u = False
@@ -314,6 +318,10 @@ def user_Profile(request):
 
         ue = True
     return render(request, 'profile.html', {'service': service, 'pr': pr, 'u': u, 'se': s, 'ue': ue})
+
+
+def aboutus(request):
+    return render(request, 'aboutUS.html')
 
 
 def register(response):

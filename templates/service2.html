@@ -196,8 +196,8 @@ display: contents;
                     <a href={{service.instagram}} target="_blank">
                         <button class="view-btn service-social-btn"><i class="fa-brands fa-instagram"></i>Instagram</button></a>
 				</div>
-				<div class="col-md-4 mt-5 text-center">
-				<button class="view-btn service-social-btn"><i class="fa fa-phone" aria-hidden="true"></i>+917240185303</button>
+				<div class="col-md-4 mt-5 text-center"><a href="tel:{{service.phone}}">
+				<button class="view-btn service-social-btn"><i class="fa fa-phone" aria-hidden="true"></i>{{service.phone}}</button></a>
 				</div>
 
                 {% if user == service.provider %}

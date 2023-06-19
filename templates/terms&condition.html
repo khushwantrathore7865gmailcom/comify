@@ -1,0 +1,320 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fav icon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <!-- fav icon -->
+
+    <!--font awesome 6-->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
+    <!--<link rel="stylesheet" href="fonts/fontawesome/{% static 'css/all.css" />
+    <script src="https://kit.fontawesome.com/f2a4dd39db.js" crossorigin="anonymous"></script>-->
+    <!--font awesome 6-->
+
+    <!-- owl carousel -->
+
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!-- **** -----  Owl Carousel CSS ----  **** -- -->
+
+    <!-- **** -----  Bootstrap CSS ----  **** -- -->
+
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- **** ----- End of  Bootstrap CSS ----  **** -- -->
+
+    <!-- **** ----- custum css  ----  **** -- -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- **** ----- custum css  ----  **** -- -->
+
+    <title>Home</title>
+</head>
+
+<body>
+
+
+    <main>
+
+        <!-- **** -----  header ----  **** -- -->
+
+
+    <header>
+
+
+
+
+   <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
+      <div class="container  header-container-mob">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between navbar-list-outer" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"><b>Home</b></a>
+        </li>
+		 <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#"></a>
+
+			</li>
+			<li><a class="dropdown-item" href="/category/Food"> Food </a>
+			  	 <ul class="submenu dropdown-menu">
+				    <li><a class="dropdown-item" href="/category/Day_Special">Day Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Week_Special">Week Special</a></li>
+				    <li><a class="dropdown-item" href="/category/Month_Special">Month Special</a></li>
+
+				 </ul>
+			  </li>
+
+            <li><a class="dropdown-item" href="/category/Service">Service</a></li>
+            <li><a class="dropdown-item" href="/category/Accommadation">Accommodation </a></li>
+          </ul>
+
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+
+       </ul>
+
+	<ul class="header-right-text">
+<!--	<li><a style="text-decoration:underline;" href="#">Register as professional</a></li>-->
+        {% if u %}
+
+        	&nbsp;<li class="nav-item"> </li>
+        <li></li>
+	<li><a class="login-btn" href="/login">Login</a></li>
+        {% else %}
+	<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <i class="fa-regular fa-user"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/MyProfile/">My Profile</a></li>
+            <li><a class="dropdown-item" href="/logout/">Log Out</a></li>
+
+          </ul>
+        </li>
+        {% endif %}
+
+	</ul>
+        </li>
+
+	</ul>
+
+    </div>
+
+  </div>
+</nav>
+
+        </header>
+
+
+
+
+        <!-- **** -----  header ----  **** -- -->
+
+
+
+
+        <!--   ************* banner-section   ***************  -->
+
+
+
+
+
+        <!--   *************end banner-section   ***************  -->
+
+
+
+
+
+        <!--   *************about-section   ***************  -->
+
+        <!--   *************end about-section   ***************  -->
+
+        <!--   *************seller-section   ***************  -->
+
+        <!--   *************end seller-section   ***************  -->
+
+          <!--   *************easier-section   ***************  -->
+
+        <section class="quick-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11">
+                        <h1>Terms and Conditions</h1>
+                    </div>
+					<div class="col-md-1 d-flex align-items-center"></div>
+                    <div class="col-2"></div>
+
+					<div class="col-8" >
+
+Please read these Terms and Conditions ("Terms") carefully before using the Comunify website (the "Website") and accessing our services. These Terms apply to all users and visitors of the Website. By accessing or using the Website, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not use the Website.
+
+1. Service Provision:
+Comunify is an online platform that connects users with local service providers. We facilitate the provision of services but do not provide services directly. Any agreement or transaction for services occurs directly between the user and the service provider. Comunify is not responsible for the quality, accuracy, or timeliness of services provided by the service providers.
+
+2. User Responsibilities:
+When using Comunify, you agree to provide accurate and up-to-date information about yourself. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account. You must not share your account details with any third party or use another person's account without permission.
+
+3. Service Provider Screening:
+We strive to verify the information provided by service providers on our platform. However, we do not guarantee the accuracy, reliability, or completeness of such information. It is the user's responsibility to conduct their own due diligence before engaging a service provider.
+
+4. Service Provider Performance:
+Comunify does not warrant or guarantee the performance, quality, or outcomes of services provided by service providers. Users are solely responsible for evaluating the suitability, quality, and reliability of service providers and their services. Any disputes or claims arising from interactions with service providers should be resolved directly between the user and the service provider.
+
+5. Payments and Refunds:
+Comunify may facilitate payments between users and service providers. Users are responsible for paying the agreed-upon fees for services directly to the service provider. Comunify is not liable for any payment disputes between users and service providers. Refunds, if applicable, are subject to the service provider's refund policy.
+
+6. User Content:
+By submitting any content (such as reviews, comments, or feedback) on the Website, you grant Comunify a non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, adapt, publish, translate, and distribute such content for any purpose related to our services.
+
+7. Intellectual Property:
+All content on the Website, including logos, trademarks, text, images, and software, is the property of Comunify or its licensors and is protected by intellectual property laws. Users may not use, reproduce, modify, or distribute any content from the Website without prior written consent from Comunify.
+
+8. Limitation of Liability:
+Comunify shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of or in connection with the use of the Website or services provided by service providers. We do not guarantee the availability, accuracy, or reliability of the Website, and we reserve the right to modify or discontinue the Website at any time without prior notice.
+
+9. Privacy:
+We collect and process personal information in accordance with our Privacy Policy. By using the Website, you consent to the collection, storage, and use of your personal information as described in our Privacy Policy.
+
+10. Governing Law:
+These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any disputes arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the courts in [Jurisdiction].
+
+By using Comunify, you acknowledge that you have read, understood, and agreed to these Terms and Conditions. If you have any questions or concerns, please contact us at Comunify44@gmail.com.
+
+					</div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+<footer>
+   <div class="content">
+     <div class="left box">
+       <div class="upper">
+         <div class="topic">About us</div>
+         <p>CodingLab is a channel where you can learn HTML,
+         CSS, and also JavaScript along with creative CSS Animations and Effects.</p>
+       </div>
+       <div class="lower">
+         <div class="topic">Contact us</div>
+         <div class="phone">
+           <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+         </div>
+         <div class="email">
+           <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+         </div>
+       </div>
+     </div>
+     <div class="middle box">
+       <div class="topic">Our Services</div>
+       <div><a href="#">Web Design, Development</a></div>
+       <div><a href="#">Web UX Design, Reasearch</a></div>
+       <div><a href="#">Web User Interface Design</a></div>
+       <div><a href="#">Theme Development, Design</a></div>
+       <div><a href="#">Mobile Application Design</a></div>
+       <div><a href="#">Wire raming & Prototyping</a></div>
+     </div>
+     <div class="right box">
+       <div class="topic">Subscribe us</div>
+       <form action="#">
+
+         <div class="media-icons">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div>
+       </form>
+     </div>
+   </div>
+   <div class="bottom">
+     <p>Copyright © 2020 <a href="#"></a> All rights reserved</p>
+   </div>
+ </footer>
+        <!--   *************footer   ***************  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- **** -----  footer ----  **** -- -->
+
+        <footer>
+
+        </footer>
+
+        <!-- **** -----  footer ----  **** -- -->
+
+    </main>
+
+
+
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+
+            margin: 40,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+
+    <script type="text/javascript" src="{% static 'js/custum.js' %}"></script>
+
+</body>
+
+</html>
