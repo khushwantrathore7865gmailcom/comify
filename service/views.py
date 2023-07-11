@@ -278,7 +278,7 @@ def desc_service(request, pk):
 
 def search(request, string):
     service = Service.objects.filter(
-        Q(service_name__icontains=string) | Q(provider__icontains=string) | Q(address__icontains=string) | Q(
+        Q(service_name__icontains=string)  | Q(address__icontains=string) | Q(
             category__icontains=string) | Q(subcategory__icontains=string) | Q(desc__icontains=string))
     if request.user.is_authenticated:
 

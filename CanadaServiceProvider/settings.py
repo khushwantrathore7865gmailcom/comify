@@ -132,10 +132,18 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'narutohighlights09@gmail.com'#sender's email-id
-EMAIL_HOST_PASSWORD ='Keepitup123@#' #password associated with above email-id
 
+
+
+
+
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = "smtppro.zoho.in"
+EMAIL_PORT = 465
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = "contact@comunify.ca"
+# EMAIL_HOST_PASSWORD="SL@Top1Day"
+EMAIL_HOST_USER = 'contact@comunify.ca'#sender's email-id
+EMAIL_HOST_PASSWORD ='Gurjit#44' #password associated with above email-id
