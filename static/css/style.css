@@ -787,6 +787,7 @@ footer .content p,a{
 footer .content .box{
   width: 33%;
   transition: all 0.4s ease;
+  padding: 5px;
 }
 footer .content .topic{
   font-size: 22px;
