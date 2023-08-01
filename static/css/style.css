@@ -327,7 +327,7 @@ margin-left:15px;
 .banner-section {
     width: 100%;
     min-height: 422px;
-    background: linear-gradient(90deg, rgb(0 0 0 / 55%) 0%, rgb(54 53 52 / 0%) 75%, rgb(92 87 87 / 0%) 100%), url(../images/people-cleaning-hazmat-suits.jpg);
+    background: linear-gradient(90deg, rgb(0 0 0 / 55%) 0%, rgb(54 53 52 / 0%) 75%, rgb(92 87 87 / 0%) 100%), url(../images/banner.png);
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -802,7 +802,7 @@ footer .content .lower .topic{
 }
 footer .content .lower i{
   padding-right: 16px;
-}
+}banner-section
 footer .content .middle{
   padding-left: 80px;
 }
